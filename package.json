@@ -1,0 +1,14 @@
+{
+	"dependencies": {
+		"react-datepicker": "^6.9.0",
+		"react-hook-form": "^7.51.4"
+	},
+	"devDependencies": {
+		"concurrently": "^8.2.2"
+	},
+	"scripts": {
+		"install:all": "pnpm install && pnpm --prefix backend install && pnpm --prefix frontend install",
+		"start:all": "concurrently \"pnpm --prefix backend run start:dev\" \"pnpm --prefix frontend run dev\"",
+		"prisma:backend": "cd backend && npx prisma generate && npx prisma db push && npx prisma db seed"
+	}
+}
